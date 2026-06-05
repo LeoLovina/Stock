@@ -15,9 +15,9 @@ Create a beginner-friendly documentation structure for a Taiwan stock market 籌
 - [x] Create a task checklist and lessons file.
 - [ ] Confirm the first data source and available fields.
 - [ ] Decide whether the first version includes TWSE only or TWSE plus OTC.
-- [ ] Initialize the Git repository and connect it to GitHub.
-- [ ] Exclude the `Example/` folder from version control.
-- [ ] Commit the current project files and push them to `LeoLovina/Stock`.
+- [x] Initialize the Git repository and connect it to GitHub.
+- [x] Exclude the `Example/` folder from version control.
+- [x] Commit the current project files and push them to `LeoLovina/Stock`.
 
 ### Files Created
 
@@ -36,3 +36,4 @@ Create a beginner-friendly documentation structure for a Taiwan stock market 籌
 - Review `docs/features/initial-research-dashboard.md` and narrow the first dashboard scope.
 - Choose a first data source before starting implementation.
 - Publish the documentation-only baseline to GitHub after Git is initialized.
+- Verify the first remote sync stays clean after future content updates.
