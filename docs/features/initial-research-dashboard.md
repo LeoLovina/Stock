@@ -6,6 +6,7 @@ Create the first useful screen for a Taiwan stock 籌碼 website.
 The user should be able to choose a stock and quickly understand recent chip-related signals without needing to inspect many separate data tables.
 
 The first version should use FinMind as its data provider.
+The implementation stack should follow the example project pattern: ASP.NET Core backend host plus colocated Next.js frontend.
 
 ## Target User
 
@@ -23,6 +24,7 @@ A Taiwan stock market retail investor who wants a clearer view of 籌碼 changes
 ## In Scope
 
 - Stock search input.
+- TWSE + TPEx stock search, if FinMind supports both through `TaiwanStockInfo`.
 - Stock summary header.
 - Latest data timestamp or trading date.
 - 三大法人 daily and recent-trend section.
@@ -46,6 +48,7 @@ A Taiwan stock market retail investor who wants a clearer view of 籌碼 changes
 - A user can select a stock and see a dashboard for that stock.
 - The dashboard identifies the data date used by each section.
 - The dashboard uses FinMind data or clearly marked FinMind sample responses.
+- The UI is Traditional Chinese.
 - The dashboard separates facts from interpretation.
 - Missing or stale data is visible and understandable.
 - No text tells users to buy or sell a stock.
@@ -55,6 +58,7 @@ A Taiwan stock market retail investor who wants a clearer view of 籌碼 changes
 - The first version can use delayed or end-of-day data.
 - The first dashboard can start with a limited number of chip indicators.
 - The first implementation can use cached FinMind responses while the UI is being shaped.
+- Local development uses `StockChips.Web/.env` for the FinMind token.
 - More advanced features can be added after the basic dashboard is clear.
 
 ## Open Questions

@@ -14,9 +14,14 @@ Create a beginner-friendly documentation structure for a Taiwan stock market 籌
 - [x] Record FinMind as the first data source.
 - [x] Create the first feature doc for the initial research dashboard.
 - [x] Create a task checklist and lessons file.
+- [x] Confirm first app stack: ASP.NET Core + Next.js Pages Router.
+- [x] Confirm local `.env` token storage for the first version.
+- [x] Confirm first market scope: TWSE + TPEx where FinMind supports both.
+- [x] Confirm first screen: one-stock dashboard.
+- [x] Confirm UI language: Traditional Chinese.
 - [ ] Confirm the exact FinMind API version and authentication approach.
 - [ ] Confirm available FinMind fields for the first datasets.
-- [ ] Decide whether the first version includes TWSE only or TWSE plus OTC.
+- [x] Decide whether the first version includes TWSE only or TWSE plus OTC: use TWSE + TPEx where FinMind supports both.
 - [x] Initialize the Git repository and connect it to GitHub.
 - [x] Exclude the `Example/` folder from version control.
 - [x] Commit the current project files and push them to `LeoLovina/Stock`.
@@ -32,6 +37,9 @@ Create a beginner-friendly documentation structure for a Taiwan stock market 籌
 - [x] `docs/features/registry.json`
 - [x] `tasks/todo.md`
 - [x] `tasks/lessons.md`
+- [x] `StockChips.slnx`
+- [x] `StockChips.Web/**`
+- [x] `StockChips.Web/ClientApp/.env.local.example`
 
 ### Next Steps
 
@@ -39,5 +47,10 @@ Create a beginner-friendly documentation structure for a Taiwan stock market 籌
 - Review `docs/integrations/finmind.md` and confirm the API version/token approach.
 - Review `docs/features/initial-research-dashboard.md` and narrow the first dashboard scope.
 - Choose whether the first implementation uses live FinMind calls or saved sample responses.
+
+### Verification
+
+- [x] `dotnet build StockChips.slnx --no-restore`
+- [ ] Frontend install/build not yet run because Node is blocked in this environment and Yarn is not installed.
 - Publish the documentation-only baseline to GitHub after Git is initialized.
 - Verify the first remote sync stays clean after future content updates.

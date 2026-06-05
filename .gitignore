@@ -1,2 +1,15 @@
 Example/
 
+# Local secrets
+.env
+*.env.local
+StockChips.Web/.env
+StockChips.Web/ClientApp/.env.local
+
+# Build output
+bin/
+obj/
+clientdist/
+.next/
+out/
+node_modules/

@@ -9,6 +9,41 @@ The first goal is not to write code yet. The first goal is to describe the produ
 Use FinMind as the first data provider.
 The user has a FinMind free account, so the first implementation should be designed around safe token storage, cached API calls, and clear handling of delayed or missing data.
 
+## First Version Stack
+
+- Backend: ASP.NET Core host project in `StockChips.Web`.
+- Frontend: Next.js Pages Router app in `StockChips.Web/ClientApp`.
+- Local secrets: `StockChips.Web/.env`.
+- First market scope: TWSE + TPEx where FinMind supports both.
+- First screen: one-stock 籌碼 dashboard.
+- UI language: Traditional Chinese.
+
+## Local Configuration
+
+1. Copy `StockChips.Web/.env.example` to `StockChips.Web/.env`.
+2. Put your FinMind token in `FINMIND_TOKEN`.
+3. Copy `StockChips.Web/ClientApp/.env.local.example` to `StockChips.Web/ClientApp/.env.local`.
+4. Set `NEXT_PUBLIC_API_BASE_URL` to the ASP.NET Core URL from `StockChips.Web/Properties/launchSettings.json`.
+5. Keep `.env` and `.env.local` local. Do not commit them.
+
+## Local Development
+
+1. Start the backend:
+
+   ```powershell
+   dotnet run --project StockChips.Web/StockChips.Web.csproj
+   ```
+
+2. Start the frontend in another terminal:
+
+   ```powershell
+   cd StockChips.Web/ClientApp
+   yarn install
+   yarn dev
+   ```
+
+3. Open the Next.js URL, usually `http://localhost:3000`.
+
 ## What This Website Should Help Users Do
 
 - Search a Taiwan-listed stock by code or name.
