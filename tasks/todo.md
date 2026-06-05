@@ -38,7 +38,7 @@ Create a beginner-friendly documentation structure for a Taiwan stock market 籌
 - [x] Confirm first market scope: TWSE + TPEx where FinMind supports both.
 - [x] Confirm first screen: one-stock dashboard.
 - [x] Confirm UI language: Traditional Chinese.
-- [ ] Confirm the exact FinMind API version and authentication approach.
+- [x] Confirm the exact FinMind API version and authentication approach: use v4 endpoint with local token.
 - [ ] Confirm available FinMind fields for the first datasets.
 - [x] Decide whether the first version includes TWSE only or TWSE plus OTC: use TWSE + TPEx where FinMind supports both.
 - [x] Initialize the Git repository and connect it to GitHub.

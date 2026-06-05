@@ -19,31 +19,32 @@ Use `StockChips.Web/.env` for the first local version:
 
 ## First Datasets To Use
 
-Start with these FinMind datasets because they match the first dashboard scope:
+Start with these FinMind v4 datasets because they match the first dashboard scope:
 
-- `InstitutionalInvestorsBuySell`: per-stock institutional investor buy/sell data.
+- `TaiwanStockInstitutionalInvestorsBuySell`: per-stock institutional investor buy/sell data.
 - `TaiwanStockMarginPurchaseShortSale`: per-stock margin and short-sale data.
 - `TaiwanStockHoldingSharesPer`: shareholding distribution by holding level.
 
 Useful later:
 
-- `InstitutionalInvestors`: market-wide institutional investor buy/sell data.
-- `Shareholding`: foreign investment and issued-share information.
-- `SecuritiesLending`: securities lending transaction details.
+- `TaiwanStockTotalInstitutionalInvestors`: market-wide institutional investor buy/sell data.
+- `TaiwanStockShareholding`: foreign investment and issued-share information.
+- `TaiwanStockSecuritiesLending`: securities lending transaction details.
 - `TaiwanStockPrice`: daily stock price data for chart context.
 
 ## Initial API Shape
 
-FinMind examples use:
+FinMind v4 examples use:
 
-- Base URL: `https://api.finmindtrade.com/api/v3/data`
+- Base URL: `https://api.finmindtrade.com/api/v4/data`
 - Query parameters:
   - `dataset`
   - `stock_id`
+  - `start_date`
   - `date`
   - token or login-based authentication, depending on the API version and client approach
 
-Before coding, verify whether the implementation should use the v3 endpoint, v4 endpoint, or the official Python SDK.
+The first implementation uses the v4 endpoint.
 
 ## Product Rules
 

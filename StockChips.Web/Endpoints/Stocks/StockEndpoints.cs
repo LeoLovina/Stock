@@ -47,7 +47,7 @@ public static class StockEndpoints
         var startDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(-45));
 
         var institutionalRows = await finMind.GetDataAsync(
-            "InstitutionalInvestorsBuySell",
+            "TaiwanStockInstitutionalInvestorsBuySell",
             stockId,
             startDate,
             cancellationToken);
