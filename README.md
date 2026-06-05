@@ -38,8 +38,8 @@ The user has a FinMind free account, so the first implementation should be desig
 
    ```powershell
    cd StockChips.Web/ClientApp
-   yarn install
-   yarn dev
+   .\yarn.cmd install
+   .\yarn.cmd dev
    ```
 
 3. Open the Next.js URL, usually `http://localhost:3000`.

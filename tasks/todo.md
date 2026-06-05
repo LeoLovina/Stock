@@ -1,6 +1,25 @@
 # Task Plan
 
-## Current Task: Prepare Markdown Documentation and Publish to GitHub
+## Completed Task: Install Yarn for ClientApp
+
+### Goal
+
+Vendor a project-local Yarn release for `StockChips.Web/ClientApp` so the frontend can be installed and run without depending on a machine-wide Yarn install.
+
+### Acceptance Criteria
+
+- [x] Add a local Yarn release file under `StockChips.Web/ClientApp/.yarn/releases`.
+- [x] Add project config so Yarn prefers the vendored release for this app.
+- [x] Add a Windows wrapper for local use from the client app folder.
+- [x] Verify the vendored Yarn reports its version.
+- [x] Update the local dev instructions to match the project-pinned Yarn setup.
+
+### Verification
+
+- [x] `.\yarn.cmd --version` reports `1.22.22` when `NODE_EXE` points at the bundled Node runtime.
+- [x] Direct execution of `.yarn/releases/yarn-1.22.22.js` with the bundled Node runtime also reports `1.22.22`.
+
+## Completed Baseline Task: Prepare Markdown Documentation and Publish to GitHub
 
 ### Goal
 
@@ -51,6 +70,6 @@ Create a beginner-friendly documentation structure for a Taiwan stock market 籌
 ### Verification
 
 - [x] `dotnet build StockChips.slnx --no-restore`
-- [ ] Frontend install/build not yet run because Node is blocked in this environment and Yarn is not installed.
+- [ ] Frontend install/build was deferred during the documentation baseline because Yarn had not been added yet.
 - Publish the documentation-only baseline to GitHub after Git is initialized.
 - Verify the first remote sync stays clean after future content updates.
