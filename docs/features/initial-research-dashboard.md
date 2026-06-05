@@ -5,6 +5,8 @@
 Create the first useful screen for a Taiwan stock 籌碼 website.
 The user should be able to choose a stock and quickly understand recent chip-related signals without needing to inspect many separate data tables.
 
+The first version should use FinMind as its data provider.
+
 ## Target User
 
 A Taiwan stock market retail investor who wants a clearer view of 籌碼 changes before doing deeper research.
@@ -25,6 +27,7 @@ A Taiwan stock market retail investor who wants a clearer view of 籌碼 changes
 - Latest data timestamp or trading date.
 - 三大法人 daily and recent-trend section.
 - 融資融券 daily and recent-trend section.
+- 股權分散 section if `TaiwanStockHoldingSharesPer` is available for the selected stock.
 - Plain-language signal summary.
 - Missing-data and stale-data states.
 
@@ -42,6 +45,7 @@ A Taiwan stock market retail investor who wants a clearer view of 籌碼 changes
 
 - A user can select a stock and see a dashboard for that stock.
 - The dashboard identifies the data date used by each section.
+- The dashboard uses FinMind data or clearly marked FinMind sample responses.
 - The dashboard separates facts from interpretation.
 - Missing or stale data is visible and understandable.
 - No text tells users to buy or sell a stock.
@@ -50,12 +54,11 @@ A Taiwan stock market retail investor who wants a clearer view of 籌碼 changes
 
 - The first version can use delayed or end-of-day data.
 - The first dashboard can start with a limited number of chip indicators.
+- The first implementation can use cached FinMind responses while the UI is being shaped.
 - More advanced features can be added after the basic dashboard is clear.
 
 ## Open Questions
 
-- What is the first data provider or file source?
 - Which exact fields are available for 三大法人?
 - Which exact fields are available for 融資融券?
 - Should charts be required in the first version, or are tables and summaries enough?
-

@@ -36,15 +36,14 @@ This data often changes less frequently than daily trading data.
 
 - The website should explain data in plain language.
 - The website should show source dates so users know how fresh the data is.
+- The first data source is FinMind.
 - The website should avoid "buy", "sell", or guaranteed prediction language.
 - If data is missing, stale, or delayed, the UI should say so clearly.
 - Signals should be treated as context, not investment advice.
 
 ## Open Questions
 
-- Which data source will be used first?
 - Will the first version cover all Taiwan stocks or only listed TWSE stocks?
 - Should OTC stocks be included in the first version?
 - How many days of history should the first dashboard show?
 - Should the UI use Chinese only, or Chinese with English labels?
-
