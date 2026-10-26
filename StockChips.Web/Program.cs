@@ -30,6 +30,7 @@ if (app.Environment.IsDevelopment())
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
+// endpoints mapping
 app.MapGet("/api/health", () => Results.Ok(new { status = "ok" }));
 app.MapStockEndpoints();
 
