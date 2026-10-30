@@ -12,6 +12,7 @@ The user has a FinMind free account, so the first implementation should be desig
 ## First Version Stack
 
 - Backend: ASP.NET Core host project in `StockChips.Web`.
+- Test API: separate ASP.NET Core project in `Stock.Api`, protected by Auth0.
 - Frontend: Next.js Pages Router app in `StockChips.Web/ClientApp`.
 - Local secrets: `StockChips.Web/.env`.
 - First market scope: TWSE + TPEx where FinMind supports both.
@@ -43,6 +44,18 @@ The user has a FinMind free account, so the first implementation should be desig
    ```
 
 3. Open the Next.js URL, usually `http://localhost:3000`.
+
+### Run the test Stock API
+
+The API configuration defaults to tenant `dev-w7qt8cqjv3ku3d2l.us.auth0.com` and audience `https://stock-api`. In Auth0, create an API named `Stock API` with that exact identifier and the `RS256` signing algorithm. In the API's **Test** tab, authorize a Machine-to-Machine test application and request an access token for this API. A token for the Auth0 Management API will not work.
+
+Run the API from the repository root:
+
+```powershell
+dotnet run --project Stock.Api/Stock.Api.csproj
+```
+
+Call `http://localhost:5080/api/stocks` with `Authorization: Bearer <access-token>`. CRUD routes are `GET /api/stocks`, `GET /api/stocks/{id}`, `POST /api/stocks`, `PUT /api/stocks/{id}`, and `DELETE /api/stocks/{id}`. POST and PUT accept JSON with `symbol` and `name`. Data is held in memory and resets when the API restarts. For detailed Auth0 setup and behavior, see [docs/features/stock-api.md](docs/features/stock-api.md).
 
 ## What This Website Should Help Users Do
 

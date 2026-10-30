@@ -1,5 +1,24 @@
 # Task Plan
 
+## Active Task: Build Auth0-Protected Test Stock API
+
+### Goal
+
+Add a separate ASP.NET Core API project in the repository root, following `Example/web-net-install-base-upload/BACKEND_STYLE_GUIDE.md`. Provide in-memory stock CRUD routes protected by Auth0 bearer tokens.
+
+### Acceptance Criteria
+
+- [x] Add `Stock.Api` beside (not inside) `StockChips.Web` and include it in `StockChips.slnx`.
+- [x] Implement create, list, get, update, and delete routes for a test stock entity.
+- [x] Require Auth0 JWT bearer authentication on all stock routes.
+- [x] Document the Auth0 API, test client, and local configuration setup.
+- [x] Update the active feature docs and README.
+
+### Verification
+
+- [x] `dotnet build StockChips.slnx --no-restore /m:1 /p:UseSharedCompilation=false` succeeds.
+- [x] End-to-end token verification requires creating the Stock API and authorizing a test application in the user's Auth0 dashboard; setup steps are documented.
+
 ## Completed Task: Install Yarn for ClientApp
 
 ### Goal
