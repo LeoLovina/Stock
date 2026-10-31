@@ -40,14 +40,14 @@ After starting the API and copying an access token from the Auth0 API **Test** t
 ```powershell
 $token = "PASTE_ACCESS_TOKEN_HERE"
 $headers = @{ Authorization = "Bearer $token" }
-$stock = Invoke-RestMethod -Method Post -Uri "http://localhost:5080/api/stocks" -Headers $headers -ContentType "application/json" -Body '{"symbol":"DEMO","name":"Demo stock"}'
+$stock = Invoke-RestMethod -Method Post -Uri "https://localhost:7080/api/stocks" -Headers $headers -ContentType "application/json" -Body '{"symbol":"DEMO","name":"Demo stock"}'
 $stock
 ```
 
 Use `$stock.id` with `GET`, `PUT`, or `DELETE` on `/api/stocks/{id}`. For example, list all records with:
 
 ```powershell
-Invoke-RestMethod -Uri "http://localhost:5080/api/stocks" -Headers $headers
+Invoke-RestMethod -Uri "https://localhost:7080/api/stocks" -Headers $headers
 ```
 
 ### Local Run
@@ -58,11 +58,21 @@ The project has the tenant domain and suggested audience in `appsettings.json`. 
 dotnet run --project Stock.Api/Stock.Api.csproj
 ```
 
-The API listens at `http://localhost:5080` when run with its HTTP launch profile. Its collection route is `http://localhost:5080/api/stocks`.
+The default HTTPS launch profile serves the API and Swagger UI at `https://localhost:7080`. The root URL opens Swagger; HTTP requests to `http://localhost:5080` redirect to HTTPS when both launch-profile URLs are active. If the browser reports a local certificate warning, trust the .NET development certificate once with:
+
+```powershell
+dotnet dev-certs https --trust
+```
+
+Run that command before starting the HTTPS profile if this machine does not already have a valid .NET development certificate. The API cannot start its HTTPS listener without one.
+
+In Swagger, select **Authorize**, paste the Auth0 access token, and use the CRUD operations. The OpenAPI document is at `/swagger/v1/swagger.json`.
 
 ## Acceptance Criteria
 
 - The standalone API builds with the solution.
+- Local development provides HTTPS and Swagger UI at the API root.
+- Swagger UI supports Auth0 bearer tokens for trying the protected routes.
 - All CRUD routes require valid Auth0 JWT bearer tokens.
 - The endpoint slices and DTOs are organized according to the repository backend style guide.
 - Auth0 setup and the temporary in-memory behavior are documented for local testing.

@@ -1,5 +1,23 @@
 # Task Plan
 
+## Completed Task: Enable HTTPS and Root Swagger UI for Stock API
+
+### Goal
+
+Serve the test API over HTTPS in local development and display an interactive Swagger UI when its root URL is opened.
+
+### Acceptance Criteria
+
+- [x] Add an HTTPS launch profile and HTTP-to-HTTPS redirection.
+- [x] Add Swagger/OpenAPI generation and show Swagger UI at `/`.
+- [x] Expose a bearer-token input in Swagger UI for the Auth0-protected routes.
+- [x] Document the local HTTPS certificate setup and URLs.
+
+### Verification
+
+- [x] `dotnet build StockChips.slnx --no-restore /m:1 /p:UseSharedCompilation=false` succeeds with zero warnings or errors.
+- [ ] HTTPS/Swagger browser smoke check: this environment has no valid .NET HTTPS development certificate, and local socket access is blocked. Run `dotnet dev-certs https --trust` and browse `https://localhost:7080` locally.
+
 ## Active Task: Build Auth0-Protected Test Stock API
 
 ### Goal

@@ -52,10 +52,11 @@ The API configuration defaults to tenant `dev-w7qt8cqjv3ku3d2l.us.auth0.com` and
 Run the API from the repository root:
 
 ```powershell
-dotnet run --project Stock.Api/Stock.Api.csproj
+dotnet dev-certs https --trust
+dotnet run --project Stock.Api/Stock.Api.csproj --launch-profile https
 ```
 
-Call `http://localhost:5080/api/stocks` with `Authorization: Bearer <access-token>`. CRUD routes are `GET /api/stocks`, `GET /api/stocks/{id}`, `POST /api/stocks`, `PUT /api/stocks/{id}`, and `DELETE /api/stocks/{id}`. POST and PUT accept JSON with `symbol` and `name`. Data is held in memory and resets when the API restarts. For detailed Auth0 setup and behavior, see [docs/features/stock-api.md](docs/features/stock-api.md).
+The HTTPS profile uses `https://localhost:7080`; opening that URL shows Swagger UI. The certificate command creates and trusts the local .NET development certificate. Swagger's **Authorize** button accepts the Auth0 access token. CRUD routes are `GET /api/stocks`, `GET /api/stocks/{id}`, `POST /api/stocks`, `PUT /api/stocks/{id}`, and `DELETE /api/stocks/{id}`. POST and PUT accept JSON with `symbol` and `name`. Data is held in memory and resets when the API restarts. For detailed Auth0 setup and behavior, see [docs/features/stock-api.md](docs/features/stock-api.md).
 
 ## What This Website Should Help Users Do
 
