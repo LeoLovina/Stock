@@ -1,5 +1,42 @@
 # Task Plan
 
+## Completed Task: Enable HTTPS and Root Swagger UI for Stock API
+
+### Goal
+
+Serve the test API over HTTPS in local development and display an interactive Swagger UI when its root URL is opened.
+
+### Acceptance Criteria
+
+- [x] Add an HTTPS launch profile and HTTP-to-HTTPS redirection.
+- [x] Add Swagger/OpenAPI generation and show Swagger UI at `/`.
+- [x] Expose a bearer-token input in Swagger UI for the Auth0-protected routes.
+- [x] Document the local HTTPS certificate setup and URLs.
+
+### Verification
+
+- [x] `dotnet build StockChips.slnx --no-restore /m:1 /p:UseSharedCompilation=false` succeeds with zero warnings or errors.
+- [ ] HTTPS/Swagger browser smoke check: this environment has no valid .NET HTTPS development certificate, and local socket access is blocked. Run `dotnet dev-certs https --trust` and browse `https://localhost:7080` locally.
+
+## Active Task: Build Auth0-Protected Test Stock API
+
+### Goal
+
+Add a separate ASP.NET Core API project in the repository root, following `Example/web-net-install-base-upload/BACKEND_STYLE_GUIDE.md`. Provide in-memory stock CRUD routes protected by Auth0 bearer tokens.
+
+### Acceptance Criteria
+
+- [x] Add `Stock.Api` beside (not inside) `StockChips.Web` and include it in `StockChips.slnx`.
+- [x] Implement create, list, get, update, and delete routes for a test stock entity.
+- [x] Require Auth0 JWT bearer authentication on all stock routes.
+- [x] Document the Auth0 API, test client, and local configuration setup.
+- [x] Update the active feature docs and README.
+
+### Verification
+
+- [x] `dotnet build StockChips.slnx --no-restore /m:1 /p:UseSharedCompilation=false` succeeds.
+- [x] End-to-end token verification requires creating the Stock API and authorizing a test application in the user's Auth0 dashboard; setup steps are documented.
+
 ## Completed Task: Install Yarn for ClientApp
 
 ### Goal

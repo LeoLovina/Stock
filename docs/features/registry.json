@@ -1,8 +1,13 @@
 {
   "initial-research-dashboard": {
     "name": "Initial Research Dashboard",
-    "status": "active",
+    "status": "planned",
     "featureDoc": "docs/features/initial-research-dashboard.md"
+  },
+  "stock-api": {
+    "name": "Auth0-Protected Test Stock API",
+    "status": "active",
+    "featureDoc": "docs/features/stock-api.md"
   }
 }
 
